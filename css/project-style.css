@@ -1,0 +1,1118 @@
+@font-face {
+    font-family: 'georgiabold';
+    src: url('../fonts/georgia_bold-webfont.woff2') format('woff2'),
+         url('georgia_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}   
+@font-face {
+    font-family: 'georgiaitalic';
+    src: url('georgia_italic-webfont.woff2') format('woff2'),
+         url('georgia_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'georgiaregular';
+    src: url('georgia_regular_font-webfont.woff2') format('woff2'),
+         url('georgia_regular_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f8f8;
+}   
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    background-color: #fff;
+    padding: 10px 0;
+}
+.inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.logo {
+    max-width: 250px;
+}   
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.menu ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+} 
+.contact-number a {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #ad7814;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+main {
+    padding-top: 133px;
+    width: 100%;
+    display: inline-block;
+}
+.banner-div {
+    background-color: #f2f6f7;
+    position: relative;
+}
+.banner-section {
+    width: 70%;
+    float: left;
+}
+.fix-form {
+    width: 30%;
+    float: left;
+    position: sticky;
+    top: 75px;
+    background-color: #f2f6f7;
+}
+.new-fix-form-class {
+    box-shadow: 0 0 5px #ccc;
+}
+.banner-cnt {
+    padding: 15px;
+} 
+.banner-cnt h1 {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+.banner-cnt p {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+.banner-usp {
+    background-color: #ad7814;  
+    padding: 15px;
+    border-radius: 10px; 
+    color: #fff;
+}
+.banner-form {
+    padding-top: 10px;
+}
+.banner-form h2,
+.banner-cnt h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+.form-control {
+    border-radius: 0;
+}
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+.highligh-img img{
+    height: inherit;
+}
+.countryCode {
+    position: absolute;
+    width: 100px;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 57%;
+    border: 0;
+    background-color: transparent;
+    z-index: 1; 
+    color: #000;
+    font-size: 14px;
+}
+.propertyCode{
+    
+}
+.countryCode ~ .form-control {
+    padding-left: 120px;
+}
+.btn {
+    background-color: #ad7814;
+    color: #fff;
+}
+.amenities-itm span {
+    display: block;
+}
+.amenities-itm {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px;
+}
+.amenities-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 0 10px;
+}
+.amenities-icon img {
+    width: 20px;
+    height: auto;
+} 
+.same-section {
+    margin-bottom: 40px;
+    position: relative; 
+}
+.right-position { 
+    position: absolute;
+    left: 50%;
+    bottom: -45px;
+    transform: translateX(-50%);
+} 
+.title-div {
+    margin-bottom: 20px;  
+}
+.overview-itm-bg {
+    background-color: #f2f6f7;
+    box-shadow: 0 0 5px #ccc; 
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600; 
+    text-align: center;
+    font-size: 14px;
+}
+.rera-div .overview-itm-bg {
+    background-color: #ad7814;
+    color: #fff;
+}
+.rera-div { 
+    position: relative;
+}
+.rera-info {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #fff;
+    z-index: 9;
+    min-width: 700px;
+    padding: 15px;
+    box-shadow: 0 0 5px #ddd;
+}
+.rera-info h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.rera-info .table th, .rera-info .table td {
+    font-size: 14px;
+}
+.rera-div .overview-itm-bg {
+    cursor: pointer;
+}
+.overview-itm-bg.active ~ .rera-info {
+    display: block;
+}
+.rera-info .rera-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+}
+.title-div h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.title-div p {
+    font-size: 16px;
+}
+textarea.form-control {
+    resize: none;
+    height: 50px;
+}
+.price-div .table-responsive tr th {
+    background-color: #ad7814;
+    color: #fff;
+    text-transform: uppercase;
+}
+.floor-plan-div .nav-tabs {
+    display:block;
+}
+.floor-plan-cnt h5 {
+    font-size: 18px;
+    border-bottom: 1px dotted #000;
+    padding: 5px 0;
+    margin: 0;
+}
+.floor-plan-cnt p {
+    font-size: 14px;
+    margin: 0;
+    border-bottom: 1px dotted #000;
+    padding: 5px 0;
+}
+.floor-plan-div .nav-tabs {
+    border-bottom: none;
+}
+.floor-plan-div .nav-tabs .nav-link {
+    border: none;
+    color: #000;
+}
+.banner-img img { 
+    width: 100%;
+}  
+.top-footer-top {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 16px 0 0 0;
+    width: 100%;
+    display: inline-block;
+}
+.top-footer-top p {
+    color: #fff;
+    font-size: 12px;
+}
+.top-footer-top ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.top-footer-top ul li {
+    margin: 0 10px;
+}
+.top-footer-top ul li a {
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 12px;
+}
+.cta-section {
+    background-color: #fff;
+    padding: 40px 0;
+} 
+.cta-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cta-cnt h5 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.cta-cnt p {
+    margin: 0;
+    font-size: 18px;
+}
+.exclusive-access-section .container-fluid {
+    padding: 0;
+}
+.top-footer {
+    background-color: #ad7814;
+    padding: 0 0 40px 0; 
+}
+.bottom-footer {
+    background-color: #f6f6f6;
+    padding-top: 12px;
+}
+.bottom-footer p {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+    padding-bottom: 12px;
+}
+.footer-item {
+    padding-top: 40px;
+}
+.footer-item h5 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+} 
+.footer-item p {
+    color: #fff;
+    font-size: 13px;
+}
+.footer-item ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+.footer-item ul li {
+    margin: 0 0 10px 0;
+    display: flex;
+}
+.footer-item ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+}
+.footer-item ul li .fa {
+    color: #fff;
+    font-size: 22px;
+}
+.footer-item ul li label {
+    color: #fff;
+    margin: 0 0 0 15px;
+    font-size: 14px;
+}
+.footer-item p {
+    color: #fff;
+    font-size: 13px;
+    margin: 15px 0 10px 0;
+}
+.footer-contact-tab .nav-tabs {
+    border-bottom: none;
+}
+.footer-contact-tab .nav-tabs .nav-link {
+    color: #fff;
+    font-size: 13px;
+    position: relative;
+    padding: 4px 10px;
+    border: 0;
+    background-color: transparent;
+    border-radius: .25rem;
+}
+.footer-contact-tab .nav-tabs .nav-link.active {
+    color: #000;
+    background-color: #fff;
+}
+.footer-contact-tab .card {
+    background-color: transparent;
+    border: none;
+}
+.footer-contact-tab .card-body {
+    padding: 0;
+}
+.footer-contact-tab .tab-content {
+    margin-top: 20px;
+}
+.call-to-action-inner {
+    background-color: #ad7814;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+} 
+.coll-to-info h4 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.coll-to-info p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+.call-to-action-inner .btn {
+    background-color: #fff;
+    color: #ad7814;
+}
+.call-to-action {
+    position: relative;
+}
+.call-to-action::before {
+    content: "";
+    background-color: #636363;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+.location-div {
+    background-color: #fff;
+    box-shadow: 0px 1px 2px #ccc;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+.location-cnt ul {
+    padding: 10px 10px 10px 0;
+    list-style: none;
+}
+.location-cnt ul li {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    position: relative;
+}
+.location-cnt ul li .fa {
+    position: absolute;
+    left: -20px;
+    top: 5px;
+}
+.gallery-itm {
+    margin-bottom: 10px;
+}
+.gallery-itm .img-fluid {
+    height: 150px;
+    object-fit: cover;
+} 
+.self-row {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.self-colmn {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.highlight-div {
+    background-color: #fff;
+    box-shadow: 0px 1px 2px #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.highligh-cnt ul {
+    padding: 15px 0 15px 15px;
+    list-style: none;
+    margin: 0;
+}
+.highligh-cnt ul li {
+    position: relative;
+    padding: 0 0 0 15px;
+}
+.highligh-cnt ul li .fa {
+    position: absolute;
+    left: -5px;
+    top: 5px;
+}
+.overview-div {
+    /* background-color: #ad7814;
+    padding: 15px;
+    border-radius: 10px; */
+}
+.calltoactionresponsive {
+    display: none;
+}
+a.whatsapp_float {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    z-index: 9;
+    background-color: #31c131;
+    font-size: 25px;
+    padding: 0 0;
+    color: #fff;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}  
+.banner {
+    margin-bottom: 15px;
+}
+.banner-img {
+    cursor: pointer;
+}
+.mobile-banner {
+    display: none;
+}
+.project-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+.accordion .card .card-header {
+    padding: 0;
+}
+.faq-question {
+    padding: .75rem 1.25rem;
+    cursor: pointer;
+    position: relative;
+}
+.faq-question .fa {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.gallery-div {
+    position: relative;
+    overflow: hidden;
+}
+.swiper-pagination {
+    width: 100%;
+    bottom: -30px;
+}
+.swiper-pagination .swiper-pagination-bullet {
+    background-color: #ad7814;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+}
+.usp-item {
+    display: flex;
+    align-items: center;
+}
+.usp-item .fa {
+    width: 22px;
+} 
+.usp-text span {
+    font-size: 14px;
+}
+.mySwiper {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.mySwiper .swiper-slide {
+    opacity: 0.4;
+}
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.form-group .label {
+    font-size: 14px;
+}
+.form-check-group .label {
+    font-size: 14px;
+}   
+.cta-btn .btn:hover {
+    color: #fff;
+}
+.top-social-icons ul {
+    display: flex;
+}
+.footer-item .top-social-icons ul li {
+    margin: 15px 15px 0 0;
+}
+.top-social-icons ul li a .fa {
+    font-size: 18px;
+}
+.contact-number .schedule-site-visit {
+    border: 1px solid #ad7814;
+    background-color: transparent;
+    color: #ad7814;
+    margin: 0 10px 0 0;
+}
+.contact-number {
+    display: flex;
+}  
+.modal-header .modal-title {
+    font-size: 22px;
+}
+.modal-header .modal-title span {
+    color: #ad7814;
+    font-weight: 600;
+} 
+
+
+/* RESPONSIVE CSS STARTS HERE */
+@media only screen and (max-width: 1296px) {
+    .banner-usp {
+        font-size: 14px;
+    }
+    .overview-itm-bg {
+        font-size: 13px;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 1279px) {
+    
+
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .menu ul li a {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .contact-number a {
+        font-size: 15px;
+    }
+    .banner-cnt h1 {
+        font-size: 30px;
+    }
+    .banner-cnt p {
+        font-size: 13px;
+    }
+    .banner-usp {
+        font-size: 11px;
+    }
+    .banner-form h2 {
+        font-size: 22px;
+    }
+    .form-control {
+        font-size: 14px;
+    }
+    .countryCode {
+        font-size: 13px;
+    }
+    .title-div h3 {
+        font-size: 25px;
+    }
+    .btn {
+        font-size: 14px;
+    }      
+    .title-div p {
+        font-size: 14px;
+    }
+    .amenities-title {
+        font-size: 13px;
+    }
+    .location-cnt ul {
+        padding: 10px 10px 10px 30px;
+    }
+    .coll-to-info h4 {
+        font-size: 25px;
+    }
+    .coll-to-info p {
+        font-size: 15px;
+    }
+    .cta-cnt h5 {
+        font-size: 25px;
+    }
+    .cta-cnt p {
+        font-size: 16px;
+    }
+    .cta-btn .btn {
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+    .footer-item {
+        padding-top: 30px;
+    }
+    .footer-item h5 {
+        font-size: 20px;
+    }
+    .footer-item p {
+        color: #fff;
+        font-size: 13px;
+        margin: 15px 0 10px 0;
+    }
+    .contact-number .schedule-site-visit {
+        display: none;
+    }  
+
+}
+
+
+@media only screen and (max-width: 991px) {
+    .menu {
+        order: 2;
+        position: relative;
+    }
+    .button_container {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 29px;
+        width: 35px;
+        cursor: pointer;
+        z-index: 100;
+        transition: opacity 0.25s ease;
+        transform: translateY(-50%);
+    }
+    .button_container span {
+        background: #ad7814;
+        border: none;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.35s ease;
+        cursor: pointer;
+    }
+    .button_container span:nth-of-type(2) {
+        top: 11px;
+    }
+    .button_container span:nth-of-type(3) {
+        top: 22px;
+    }
+    .overlay {
+        position: fixed;
+        background: #ad7814;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+        overflow: hidden;
+        z-index: 9;
+    }
+    .overlay nav {
+        position: relative;
+        height: 70%;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+    .overlay ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+    }
+    .overlay ul li {
+        display: block;
+        position: relative;
+        opacity: 0;
+        margin: 0;
+    }
+    .overlay ul li a, .overlay ul li span {
+        display: inline-block;
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+        overflow: hidden;
+        font-size: 20px;
+    }
+    .contact-number a {
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .contact-number a:last-child {
+    right: 98px;
+}
+    .contact-number a span {
+        display: none;
+    }
+    .button_container.active .top {
+        transform: translateY(11px) translateX(0) rotate(45deg);
+        background: #fff;
+    }
+    .button_container.active .middle {
+        opacity: 0;
+        background: #fff;
+    }
+    .button_container.active .bottom {
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        background: #fff;
+    }
+    .overlay.open {
+        opacity: 0.9;
+        visibility: visible;
+        height: 100%;
+    }
+    .overlay.open li {
+        -webkit-animation: fadeInRight 0.5s ease forwards;
+        animation: fadeInRight 0.5s ease forwards;
+          animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-delay: 0.35s;
+        animation-delay: 0.35s;
+    }
+    @-webkit-keyframes fadeInRight{0%{opacity:0;left:20%;} 100%{opacity:1;left:0;}}
+    @keyframes fadeInRight{0%{opacity:0;left:20%;}100%{opacity:1;left:0;}}
+    .calltoactionresponsive {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .calltoactionresponsive a, .calltoactionresponsive span {
+        width: 50%;
+        text-align: center;
+        background-color: #ad7814;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .banner-section {
+        width: 100%;
+    }
+    .fix-form {
+        display: none;
+    }
+    a.whatsapp_float {
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    .call-to-action-inner {
+        padding: 15px;
+    }
+    .top-footer-top {
+        padding: 15px 0 40px 0;
+    }
+    .mobile-banner .banner-cnt {
+        max-width: 400px;
+        margin: 0 auto;
+    } 
+    footer {
+        padding-bottom: 44px;
+    }
+    .cta-cnt h5 {
+        font-size: 20px;
+    }
+    .cta-cnt p {
+        font-size: 14px;
+    }  
+}
+
+
+@media(min-width:768px) {   
+    .floor-plan-div .nav-tabs {
+        display: flex;
+    }    
+    .floor-plan-div .card {
+        border: none;
+    }
+    .floor-plan-div .card .card-header {
+        display:none;
+    }  
+    .floor-plan-div .card .collapse{
+        display:block;
+    }
+}
+
+@media(max-width:767px){
+    .right-position {
+    bottom: -19px;
+    transform: translateX(10%);
+}
+.highlight-div {
+    margin-bottom: 20px;
+}
+    .mb-hide-20{
+        display: none!important;
+    }
+    /*.floor-plan-div .tab-content > .tab-pane {
+        display: block !important;
+        opacity: 1;
+    }*/
+    .collapse:not(.show) {
+        display: block;
+    }
+    .title-div h3 {
+        font-size: 22px;
+    }
+    .title-div p {
+        font-size: 13px;
+    }
+    .btn {
+        font-size: 12px;
+    }
+    .right-position {
+         position: relative!important;
+        left:0;
+        top:5px!important;
+    }
+    .overview-itm {
+        margin-bottom: 15px;
+    }
+    .gallery-itm .img-fluid {
+        width: 100%;
+    }
+    .floor-plan-img {
+        margin-top: 20px;
+    }
+    .floor-plan-div .card .card-header {
+        padding: 0;
+    }
+    .floor-plan-div .card .card-header h5 a {
+        display: block;
+        color: #000;
+        font-size: 20px;
+        padding: 10px;
+        text-decoration: none; 
+    }
+    .floor-plan-cnt h5 {
+        font-size: 16px;
+    }
+    .floor-plan-cnt p {
+        font-size: 12px;
+    }
+    .coll-to-info h4 {
+        font-size: 18px;
+    }
+    .coll-to-info p {
+        font-size: 12px;
+    }
+    .highligh-cnt ul {
+        padding: 15px;
+    }
+    .mobile-banner {
+        display: block;
+    }
+    .rera-info {
+        min-width: 548px;
+    }
+    .cta-section {
+        padding: 20px 0;
+    }
+    .cta-cnt h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .cta-cnt p {
+        font-size: 13px;
+    }
+    .cta-btn {
+        margin-top: 20px;
+    }
+    .cta-btn .btn {
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+    .cta-div {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .location-cnt p {
+        font-size: 13px;
+        padding: 15px 15px 0 15px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .calltoactionresponsive a, .calltoactionresponsive span {
+        padding: 8px;
+        font-size: 12px;
+    }
+    a.whatsapp_float {
+        width: 35px;
+        height: 34px;
+    }
+    .right-position {
+        position: static;
+    }
+    .btn {
+        font-size: 10px;
+    }
+    .title-div h3 {
+        font-size: 20px;
+    }
+    .title-div p {
+        font-size: 12px;
+        text-align: justify;
+    }
+    .amenities-title {
+        font-size: 10px;
+    } 
+    .amenities-icon img {
+        width: 30px;
+        height: auto;
+    }
+    .highligh-cnt ul li {
+        padding: 0 0 5px 15px;
+        font-size: 12px;
+    }
+    .price-div .table-responsive tr th, .price-div .table-responsive tr td {
+        font-size: 12px;
+    }
+    .location-cnt ul li {
+        font-size: 12px;
+    }
+    .highligh-cnt ul {
+        padding: 10px 10px 10px 15px;
+    }
+    .call-to-action {
+        display: none;
+    }
+    .top-footer-top p {
+        font-size: 10px;
+        margin: 0 0 5px 0;
+    }
+    .floor-plan-div .card .card-header h5 a {
+        font-size: 16px;
+    }
+    .floor-plan-cnt h5 {
+        font-size: 14px;
+    }
+    .floor-plan-cnt p {
+        font-size: 10px;
+    }
+    #location .btn.right-position {
+        margin-top: 10px;
+    }
+    #floor-plan .btn.right-position {
+        margin-top: 10px;
+    }
+    #master-plan .btn.right-position {
+        margin-top: 10px;
+    }
+    .overlay ul li a, .overlay ul li span {
+        font-size: 16px;
+    }
+    .rera-info .table th, .rera-info .table td {
+        font-size: 10px;
+    }
+    .rera-info {
+        min-width: 288px;
+    }
+    .logo {
+        max-width: 170px;
+    }
+    main {
+        padding-top: 60px;
+    } 
+    .footer-item h5 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .bottom-footer p {
+        font-size: 12px;
+    }
+    .footer-item ul li {
+        margin: 0 0 5px 0;
+    }
+    .footer-item ul li label {
+        font-size: 13px;
+    }
+    .modal-header .modal-title {
+        font-size: 18px;
+    }
+    .form-check-group .label {
+        font-size: 12px;
+    }  
+    .rera-info h4 {
+        font-size: 14px;
+    }
+    .overview-itm-bg {
+        font-size: 12px;
+    }
+    .banner-cnt h1 { 
+        font-size: 20px;
+    }
+    .banner-form h2,
+    .banner-cnt h2 {
+        font-size: 18px;
+            font-weight: 600;
+    }
+    .faq-question {
+        padding: 10px 20px 10px 10px;
+        font-size: 13px;
+    }
+    .faq-div .accordion .collapse .card-body {
+        padding: 15px;
+        font-size: 13px;
+    }
+    .faq-question .fa {
+        right: 5px;
+    }
+    .rera-info .rera-close {
+        font-size: 14px;
+    }
+    .same-section {
+        margin-bottom: 15px;
+    } 
+
+}
