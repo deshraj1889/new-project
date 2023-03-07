@@ -1,11 +1,12 @@
 name: connect-project
-on: push
-  branches:
-    - main
-    - build
-  paths:
-    - 'index.html'
-    - 'css/project-style.css/**'
+on: 
+  push:
+    branches:
+      - main
+      - build
+    paths:
+     - 'index.html'
+     - 'css/project-style.css/**'
 jobs:
   my-job:
     runs-on: ubuntu-latest
