@@ -23,7 +23,7 @@ $mail_status = mail("info@propertyscanners.com",$subject,$body_message);
 
 if ($mail_status) { ?>
     <script language="javascript" type="text/javascript">
-        alert('Thank you for the message. We will contact you shortly.');
+        alert('Thank you for the message. We will contact you shortly. test ha');
         window.location = 'index.html';
     </script>
 <?php
