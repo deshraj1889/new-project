@@ -20,7 +20,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@main
+            - uses: actions/new-project@main
 
             # Setup gcloud CLI
             - uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
