@@ -20,11 +20,8 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout Code
+            - name: Checkout
               uses: actions/checkout@v2
-              
-            - name: Run Super-Linter
-              uses: github/super-linter@v4
 
             # Setup gcloud CLI
             - uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
