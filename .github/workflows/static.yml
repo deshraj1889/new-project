@@ -1,53 +1,39 @@
-name: 'Integration'
-
+name: Build and Deploy to Cloud Run
 on:
   push:
     branches:
-    - 'main'
-  pull_request:
-    branches:
-    - 'main'
-  workflow_dispatch:
-
-concurrency:
-  group: '${{ github.workflow }}-${{ github.head_ref || github.ref }}'
-  cancel-in-progress: true
-
-permissions:
-  contents: 'read'
-  id-token: 'write'
-
+      - main
+      - build
+    paths:
+     - 'index.html'
+     - 'css/**'
+     
+# Environment variables available to all jobs and steps in this workflow
+env:
+    PROJECT_ID: ${{ secrets.PROJECT_ID }}
+    DEFAULT_BRANCH: main
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
 jobs:
-  integration:
-    if: ${{ github.event_name == 'push' || github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]' }}
-    runs-on: 'ubuntu-latest'
+    setup-build-deploy:
+        name: Setup, Build, and Deploy
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: 'actions/checkout@v3'
+        steps:
+          - id: 'auth'
+            uses: 'google-github-actions/auth@v1'
+            with:
+              service_account_email: ${{ secrets.SA_EMAIL }}
+              service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-    - uses: 'actions/setup-node@v3'
-      with:
-        node-version: '16.x'
+          - id: 'upload-file'
+            uses: 'google-github-actions/upload-cloud-storage@v1'
+            with:
+              path: '/path/to/file'
+              destination: 'desu-project/file'
 
-    - name: 'npm build'
-      run: 'npm ci && npm run build'
-
-    - uses: 'google-github-actions/auth@main'
-      with:
-        workload_identity_provider: '${{ secrets.WIF_PROVIDER_NAME }}'
-        service_account: '${{ secrets.SERVICE_ACCOUNT_EMAIL }}'
-
-    - name: 'Create files'
-      run: |-
-        mkdir -p test
-        touch test/test1.txt
-        touch test/test2.txt
-    - id: 'upload'
-      name: 'Upload files'
-      uses: './'
-      with:
-        path: './test'
-        destination: '${{ secrets.BUCKET_NAME }}/testprefix'
-
-    - name: 'Get output'
-      run: 'echo "${{ steps.upload.outputs.uploaded }}"'
+          # Example of using the output
+          - id: 'uploaded-files'
+            uses: 'foo/bar@main'
+            env:
+              file: '${{ steps.upload-file.outputs.uploaded }}'
