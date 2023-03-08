@@ -20,20 +20,29 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - id: 'auth'
-            uses: 'google-github-actions/auth@v1'
-            with:
-              service_account_email: ${{ secrets.SA_EMAIL }}
-              service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+            - name: Checkout
+              uses: actions/checkout@v3
 
-          - id: 'upload-file'
-            uses: 'google-github-actions/upload-cloud-storage@v1'
-            with:
-              path: '/path/to/file'
-              destination: 'desu-project/file'
+            # Setup gcloud CLI
+            - uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
+              with:
+                  version: '275.0.0'
+                  service_account_email: ${{ secrets.SA_EMAIL }}
+                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-          # Example of using the output
-          - id: 'uploaded-files'
-            uses: 'foo/bar@main'
-            env:
-              file: '${{ steps.upload-file.outputs.uploaded }}'
+            # Configure gcloud CLI
+            - name: gcloud Set up
+              run: |
+                  gcloud config set project $PROJECT_ID
+            # Build and push image to Google Container Registry
+            - name: Build
+              run: |
+                  gcloud builds submit -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
+            # Deploy image to Cloud Run
+            - name: Deploy
+              run: |
+                  gcloud run deploy $SERVICE_NAME \
+                    --region $RUN_REGION \
+                    --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
+                    --platform managed
+
