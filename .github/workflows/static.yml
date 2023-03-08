@@ -1,0 +1,53 @@
+name: 'Integration'
+
+on:
+  push:
+    branches:
+    - 'main'
+  pull_request:
+    branches:
+    - 'main'
+  workflow_dispatch:
+
+concurrency:
+  group: '${{ github.workflow }}-${{ github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
+jobs:
+  integration:
+    if: ${{ github.event_name == 'push' || github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]' }}
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: 'actions/checkout@v3'
+
+    - uses: 'actions/setup-node@v3'
+      with:
+        node-version: '16.x'
+
+    - name: 'npm build'
+      run: 'npm ci && npm run build'
+
+    - uses: 'google-github-actions/auth@main'
+      with:
+        workload_identity_provider: '${{ secrets.WIF_PROVIDER_NAME }}'
+        service_account: '${{ secrets.SERVICE_ACCOUNT_EMAIL }}'
+
+    - name: 'Create files'
+      run: |-
+        mkdir -p test
+        touch test/test1.txt
+        touch test/test2.txt
+    - id: 'upload'
+      name: 'Upload files'
+      uses: './'
+      with:
+        path: './test'
+        destination: '${{ secrets.BUCKET_NAME }}/testprefix'
+
+    - name: 'Get output'
+      run: 'echo "${{ steps.upload.outputs.uploaded }}"'
