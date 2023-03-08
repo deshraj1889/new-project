@@ -7,6 +7,7 @@ on:
     paths:
      - 'index.html'
      - 'css/**'
+     - .github/workflows/action.yml
 # Environment variables available to all jobs and steps in this workflow
 env:
     PROJECT_ID: ${{ secrets.PROJECT_ID }}
