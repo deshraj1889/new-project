@@ -7,7 +7,7 @@ on:
     paths:
      - 'index.html'
      - 'css/**'
-     - .github/workflows/action.yml
+     
 # Environment variables available to all jobs and steps in this workflow
 env:
     PROJECT_ID: ${{ secrets.PROJECT_ID }}
@@ -21,7 +21,7 @@ jobs:
 
         steps:
             - name: Checkout
-              uses: actions/checkout@master
+              uses: actions/checkout@main
 
             # Setup gcloud CLI
             - uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
