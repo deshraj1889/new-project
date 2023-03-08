@@ -10,9 +10,9 @@ on:
      
 # Environment variables available to all jobs and steps in this workflow
 env:
-    PROJECT_ID: ${{ secrets.PROJECT_ID }}
+    PROJECT_ID: ${{ secrets.RUN_PROJECT }}
     DEFAULT_BRANCH: main
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
     setup-build-deploy:
