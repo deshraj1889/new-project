@@ -21,27 +21,40 @@ jobs:
 
         steps:
             #- uses: ${{ github.repository }}
-             - name: Checkout
-               uses: actions/checkout@v2
+               
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up GCP CLI
+              uses: google-github-actions/setup-gcloud@v0.2.2
+              with:
+                version: '342.0.0'
+                project_id: your-project-id
+                service_account_email: ${{ secrets.SA_EMAIL }}
+                service_account_key:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+
+            - name: Upload to GCP Cloud Storage
+              run: |
+                gsutil cp path/to/action.yml gs://desu-project/path/to/destination
 
             # Setup gcloud CLI
-            - name: gcp
-              uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
-              with:
-                  version: '275.0.0'
-                  service_account_email: ${{ secrets.SA_EMAIL }}
-                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+#             - name: gcp
+#               uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
+#               with:
+#                   version: '275.0.0'
+#                   service_account_email: ${{ secrets.SA_EMAIL }}
+#                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-            # Configure gcloud CLI
-            - name: gcloud Set up
-              run: |
-                  gcloud config set project $PROJECT_ID
+#             # Configure gcloud CLI
+#             - name: gcloud Set up
+#               run: |
+#                   gcloud config set project $PROJECT_ID
                   
-            - id: 'upload-file'
-              uses: 'google-github-actions/upload-cloud-storage@v1'
-              with:
-                path: '/path/to/action.yml'
-                destination: 'gs://desu-project/'
+#             - id: 'upload-file'
+#               uses: 'google-github-actions/upload-cloud-storage@v1'
+#               with:
+#                 path: '/path/to/action.yml'
+#                 destination: 'gs://desu-project/'
                   
             # Build and push image to Google Container Registry
 #             - name: Build
