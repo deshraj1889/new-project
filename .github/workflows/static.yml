@@ -20,11 +20,6 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            #- uses: ${{ github.repository }}
-               
-#             - name: Checkout
-#               uses: actions/checkout@v1
-
               - uses: actions/checkout@v3
                 with:
                   fetch-depth: 0
@@ -44,7 +39,7 @@ jobs:
 #                 run: |-
 #                    gsutil -m rsync -R output gs://desu-project
 
-              - id: 'gcloud storage cp'
+              - name: 'gcloud storage cp'
                 uses: 'google-github-actions/upload-cloud-storage@v1'
                 with:
                   path: '/path/to/action.yml'
