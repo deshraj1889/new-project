@@ -58,7 +58,8 @@ jobs:
             # upload file
            - name: gcloud Upload file
              run: |
-                  gcloud config set project $PROJECT_ID
+                  #gcloud config set project $PROJECT_ID
+                  gcloud config set account ${{ secrets.SA_EMAIL }}
                   gsutil cp desu.txt gs://desu-project
 
           
