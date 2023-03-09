@@ -8,61 +8,29 @@ on:
      - 'index.html'
      - 'css/**'
      - '.github/workflows/static.yml'
-     
-# Environment variables available to all jobs and steps in this workflow
-# env:
-#     PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-#     DEFAULT_BRANCH: main
-#     #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+        
 jobs:
-    setup-build-deploy:
-        name: Setup, Build, and Deploy
-        runs-on: ubuntu-latest
-        permissions:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
            contents: 'read'
            id-token: 'write'
 
-        steps:
-           - uses: actions/checkout@v3
-             with:
-               fetch-depth: 0
+    steps:
+      - uses: actions/checkout@v3
+        with:
+         fetch-depth: 0
 
-           # Configure Workload Identity Federation and generate an access token.
-           - id: 'auth'
-             name: 'Authenticate to Google Cloud'
-             uses: 'google-github-actions/auth@v1'
-             with:
-                workload_identity_provider: ${{ secrets.TOKEN }}
-                credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+                credentials_json: ${{ secrets.RUN_SA_KEY}}
                 service_account: ${{ secrets.SA_EMAIL }}
-                service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-            
-           # Setup gcloud CLI
-           - name: Set up Cloud SDK
-             uses: google-github-actions/setup-gcloud@v1
 
-           #upload file
-#            - id: 'upload-file'
-#              uses: 'google-github-actions/upload-cloud-storage@v1'
-#              with:
-#                path: 'desu.txt'
-#                destination: 'desu-project/uploadfiles/'
-#              env:
-#                CI: false
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
 
-            # Configure gcloud CLI
-#            - name: gcloud Set up
-#              run: |
-#                    gcloud config set account ${{ secrets.SA_EMAIL }}
-                  
-            # upload file
-           - name: gcloud Upload file
-             run: |
-                  #gcloud config set project $PROJECT_ID
-                  #gcloud config set account ${{ secrets.SA_EMAIL }}
-                  #gcloud auth activate-service-account ${{ secrets.SA_EMAIL }} --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}} --project=$PROJECT_ID
-                  #gsutil cp desu.txt gs://desu-project
-                  gsutil cp desu.txt gs://desu-project/uploadfiles/
-
-          
+      - name: Upload file to GCS
+        run: |
+          gsutil cp index.html gs://shubhamprojectbucket/updatedvalues/
