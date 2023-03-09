@@ -17,7 +17,7 @@ env:
 jobs:
     setup-build-deploy:
         name: Setup, Build, and Deploy
-        runs-on: ubuntu-latest
+        runs-on: Windows
 
         steps:
             #- uses: ${{ github.repository }}
