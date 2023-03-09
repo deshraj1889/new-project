@@ -22,8 +22,9 @@ jobs:
         steps:
             #- uses: ${{ github.repository }}
                
-            - name: Checkout
+            - name: Checkout Current Repository
               uses: actions/checkout@v2
+              path: ./new-project/
 
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
