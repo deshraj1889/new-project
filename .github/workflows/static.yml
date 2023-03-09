@@ -42,7 +42,7 @@ jobs:
               - name: 'gcloud storage cp'
                 uses: 'google-github-actions/upload-cloud-storage@v1'
                 with:
-                  path: '/path/to/action.yml'
+                  path: './path/.github/workflows/static.yml'
                   destination: 'gs://desu-project'
                 
 
