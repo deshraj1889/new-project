@@ -25,11 +25,13 @@ jobs:
 #             - name: Checkout
 #               uses: actions/checkout@v1
 
-#             - uses: actions/checkout@v2
-            - name: Write a multi-line message
-              run: |
-                  echo This demo file shows a 
-                  echo very basic and easy-to-understand workflow.
+              - uses: actions/checkout@v3
+                with:
+                  fetch-depth: 0
+              - name: Git config
+                run: |
+                  git config user.name github-actions
+                  git config user.email github-actions@github.com
           
 #             - name: Setup - gcloud / gsutil
 #               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
