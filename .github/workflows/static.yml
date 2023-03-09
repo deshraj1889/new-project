@@ -30,12 +30,12 @@ jobs:
               git config user.email github-actions@github.com
 
             # Setup gcloud CLI
-#            - name: gcp
-#              uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
-#              with:
-#                   version: '275.0.0'
-#                   service_account_email: ${{ secrets.SA_EMAIL }}
-#                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+           - name: gcp
+             uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
+             with:
+                  version: '275.0.0'
+                  service_account_email: ${{ secrets.SA_EMAIL }}
+                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
             # Configure gcloud CLI
 #            - name: gcloud Set up
