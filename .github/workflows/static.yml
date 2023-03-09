@@ -22,8 +22,14 @@ jobs:
         steps:
             #- uses: ${{ github.repository }}
                
-            - name: Checkout
-              uses: actions/checkout@v1
+#             - name: Checkout
+#               uses: actions/checkout@v1
+
+            - uses: actions/checkout@v2
+            - name: Write a multi-line message
+              run: |
+                  echo This demo file shows a 
+                  echo very basic and easy-to-understand workflow.
           
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
