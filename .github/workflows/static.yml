@@ -33,9 +33,11 @@ jobs:
                 service_account_email: ${{ secrets.SA_EMAIL }}
                 service_account_key:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-            - name: Upload to GCP Cloud Storage
-              run: |
-                gsutil cp path/to/action.yml gs://desu-project/path/to/destination
+            - id: 'upload-file'
+              uses: 'google-github-actions/upload-cloud-storage@v1'
+              with:
+                path: '/path/to/action.yml'
+                destination: 'gs://desu-project'
 
             # Setup gcloud CLI
 #             - name: gcp
