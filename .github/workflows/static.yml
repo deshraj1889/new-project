@@ -29,7 +29,7 @@ jobs:
               uses: google-github-actions/setup-gcloud@v0.2.2
               with:
                 version: '342.0.0'
-                project_id: your-project-id
+                project_id: $PROJECT_ID
                 service_account_email: ${{ secrets.SA_EMAIL }}
                 service_account_key:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
