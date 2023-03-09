@@ -25,7 +25,7 @@ jobs:
 #             - name: Checkout
 #               uses: actions/checkout@v1
 
-            - uses: actions/checkout@v2
+#             - uses: actions/checkout@v2
             - name: Write a multi-line message
               run: |
                   echo This demo file shows a 
