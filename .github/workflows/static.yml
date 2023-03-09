@@ -42,7 +42,7 @@ jobs:
              
            - name: 'gcloud login'
              run: |-
-              gcloud auth login --brief --cred-file="${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}"
+              gcloud auth login --brief --cred-file="${{ secrets.GOOGLE_APPLICATION_CREDENTIALS2}}"
              
              
            - id: 'upload-file'
