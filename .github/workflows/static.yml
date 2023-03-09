@@ -45,7 +45,7 @@ jobs:
             # upload file
            - name: gcloud Upload file
              run: |
-                  gcloud storage cp gs://new-project/index.html gs://desu-project/index.html
+                  gcloud storage cp new-project/index.html gs://desu-project/index.html
           
           
                   
