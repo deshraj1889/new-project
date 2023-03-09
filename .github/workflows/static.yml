@@ -26,10 +26,9 @@ jobs:
               uses: actions/checkout@v2
 
             - name: Set up GCP CLI
-              uses: google-github-actions/setup-gcloud@v0.2.2
+              uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
               with:
-                version: '342.0.0'
-                project_id: $PROJECT_ID
+                version: '276.0.0'
                 service_account_email: ${{ secrets.SA_EMAIL }}
                 service_account_key:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
