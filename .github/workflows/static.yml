@@ -38,9 +38,9 @@ jobs:
                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
             # Configure gcloud CLI
-#            - name: gcloud Set up
-#              run: |
-#                   gcloud config set project $PROJECT_ID
+           - name: gcloud Set up
+             run: |
+                  gcloud config set project $PROJECT_ID
                   
             # upload file
            - name: gcloud Upload file
