@@ -51,6 +51,6 @@ jobs:
             # upload file
            - name: gcloud Upload file
              run: |
-                  gsutil cp desu.txt gs://desu-project
+                  gsutil cp new-project/desu.txt gs://desu-project
 
           
