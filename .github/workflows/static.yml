@@ -37,7 +37,7 @@ jobs:
                 credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
                 service_account: ${{ secrets.SA_EMAIL }}
                 #service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-                
+            
            # Setup gcloud CLI
            - name: Set up Cloud SDK
              uses: google-github-actions/setup-gcloud@v1
