@@ -20,60 +20,25 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-              - uses: actions/checkout@v3
-                with:
-                  fetch-depth: 0
-              - name: Git config
-                run: |
-                  git config user.name github-actions
-                  git config user.email github-actions@github.com
-          
-              - name: Setup - gcloud / gsutil
-                uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
-                with:
-                  service_account_key:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-                  project_id: ${{ secrets.RUN_PROJECT }}
-                  export_default_credentials: true
-
-#               - name: Deploy
-#                 run: |-
-#                    gsutil -m rsync -R output gs://desu-project
-
-              - name: 'gcloud storage cp'
-                uses: 'google-github-actions/upload-cloud-storage@v1'
-                with:
-                  path: './path/.github/workflows/static.yml'
-                  destination: 'gs://desu-project'
-                
+          #- uses: ${{ github.repository }}
+           - name: Checkout
+             uses: actions/checkout@v2
 
             # Setup gcloud CLI
-#             - name: gcp
-#               uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
-#               with:
-#                   version: '275.0.0'
-#                   service_account_email: ${{ secrets.SA_EMAIL }}
-#                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+           - name: gcp
+             uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
+             with:
+                  version: '275.0.0'
+                  service_account_email: ${{ secrets.SA_EMAIL }}
+                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-#             # Configure gcloud CLI
-#             - name: gcloud Set up
-#               run: |
-#                   gcloud config set project $PROJECT_ID
+            # Configure gcloud CLI
+           - name: gcloud Set up
+             run: |
+                  gcloud config set project $PROJECT_ID
                   
-#             - id: 'upload-file'
-#               uses: 'google-github-actions/upload-cloud-storage@v1'
-#               with:
-#                 path: '/path/to/action.yml'
-#                 destination: 'gs://desu-project/'
-                  
-            # Build and push image to Google Container Registry
-#             - name: Build
-#               run: |
-#                   gcloud builds submit -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
-#             # Deploy image to Cloud Run
-#             - name: Deploy
-#               run: |
-#                   gcloud run deploy $SERVICE_NAME \
-#                     --region $RUN_REGION \
-#                     --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
-#                     --platform managed
-
+           - id: 'upload-file'
+             uses: 'google-github-actions/upload-cloud-storage@v1'
+             with:
+                path: '/path/to/action.yml'
+                destination: 'gs://desu-project/'
