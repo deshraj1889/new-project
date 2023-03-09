@@ -24,10 +24,10 @@ jobs:
              with:
                fetch-depth: 0
            
-#            - name: Git config
-#              run: |
-#               git config user.name github-actions
-#               git config user.email github-actions@github.com
+           - name: Git config
+             run: |
+              git config user.name github-actions
+              git config user.email github-actions@github.com
 
             # Setup gcloud CLI
            - name: gcp
@@ -37,13 +37,13 @@ jobs:
                   service_account_email: ${{ secrets.SA_EMAIL }}
                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
-#             # Configure gcloud CLI
-#            - name: gcloud Set up
-#              run: |
-#                   gcloud config set project $PROJECT_ID
+            # Configure gcloud CLI
+           - name: gcloud Set up
+             run: |
+                  gcloud config set project $PROJECT_ID
                   
-#            - id: 'upload-file'
-#              uses: 'google-github-actions/upload-cloud-storage@v1'
-#              with:
-#                 path: '/path/to/action.yml'
-#                 destination: 'gs://desu-project/'
+           - id: 'upload-file'
+             uses: 'google-github-actions/upload-cloud-storage@v1'
+             with:
+                path: '/path/to/action.yml'
+                destination: 'gs://desu-project/'
