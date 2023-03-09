@@ -39,7 +39,7 @@ jobs:
            - name: Set up Cloud SDK
              uses: google-github-actions/setup-gcloud@v1
              with:
-                  project_id: $PROJECT_ID
+                  project_id: ${{ env.PROJECT_ID }}
                   version: '>= 363.0.0'
                   service_account_email: ${{ secrets.SA_EMAIL }}
                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
