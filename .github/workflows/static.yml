@@ -23,9 +23,10 @@ jobs:
             #- uses: ${{ github.repository }}
                
             - name: Checkout 
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
               with:
-                ref: new-project
+                ref: main
+                repository: 'deshraj1889/new-project'
 
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
