@@ -23,7 +23,7 @@ jobs:
             #- uses: ${{ github.repository }}
                
             - name: Checkout
-              uses: actions/checkout
+              uses: actions/checkout@v1
           
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
