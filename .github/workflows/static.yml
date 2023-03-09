@@ -26,6 +26,15 @@ jobs:
            - uses: actions/checkout@v3
              with:
                fetch-depth: 0
+               
+           # Setup gcloud CLI
+           - name: Set up Cloud SDK
+             uses: google-github-actions/setup-gcloud@v1
+             with:
+                  version: '275.0.0'
+                  service_account_email: ${{ secrets.SA_EMAIL }}
+                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+                  project_id: $PROJECT_ID
            
            # Configure Workload Identity Federation and generate an access token.
            - id: 'auth'
@@ -35,14 +44,7 @@ jobs:
                 workload_identity_provider: ${{ secrets.TOKEN }}
                 service_account: ${{ secrets.SA_EMAIL }}
 
-            # Setup gcloud CLI
-           - name: Set up Cloud SDK
-             uses: google-github-actions/setup-gcloud@v1
-             with:
-                  version: '275.0.0'
-                  service_account_email: ${{ secrets.SA_EMAIL }}
-                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-                  project_id: $PROJECT_ID
+            
 
             # Configure gcloud CLI
            - name: gcloud Set up
