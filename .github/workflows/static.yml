@@ -10,10 +10,10 @@ on:
      - '.github/workflows/static.yml'
      
 # Environment variables available to all jobs and steps in this workflow
-env:
-    PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-    DEFAULT_BRANCH: main
-    #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# env:
+#     PROJECT_ID: ${{ secrets.RUN_PROJECT }}
+#     DEFAULT_BRANCH: main
+#     #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
     setup-build-deploy:
