@@ -25,7 +25,7 @@ jobs:
             - name: Checkout 
               uses: actions/checkout@v2
               with:
-                path: ./.github/workflows/static.yml
+                ref: new-project
 
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
