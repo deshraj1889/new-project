@@ -33,4 +33,4 @@ jobs:
 
       - name: Upload file to GCS
         run: |
-          gsutil cp index.html gs://desu-project/uploadfiles/
+          gsutil cp desu.txt gs://desu-project/uploadfiles/
