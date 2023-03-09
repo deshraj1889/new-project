@@ -40,17 +40,17 @@ jobs:
              uses: google-github-actions/setup-gcloud@v1
 
            #upload file
-           - id: 'upload-file'
-             uses: 'google-github-actions/upload-cloud-storage@v1'
-             with:
-               path: 'desu.txt'
-               destination: 'desu-project/'
-             env:
-               CI: false
+#            - id: 'upload-file'
+#              uses: 'google-github-actions/upload-cloud-storage@v1'
+#              with:
+#                path: 'desu.txt'
+#                destination: 'desu-project/'
+#              env:
+#                CI: false
                    
             # upload file
-#            - name: gcloud Upload file
-#              run: |
-#                   gsutil cp new-project/index.html gs://desu-project/index.html
+           - name: gcloud Upload file
+             run: |
+                  gsutil cp desu.txt gs://desu-project
 
           
