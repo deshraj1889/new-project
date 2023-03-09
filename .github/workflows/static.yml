@@ -29,7 +29,7 @@ jobs:
              name: 'Authenticate to Google Cloud'
              uses: 'google-github-actions/auth@v1'
              with:
-                workload_identity_provider: $PROJECT_ID
+                workload_identity_provider: ${{ secrets.TOKEN }}
                 service_account: ${{ secrets.SA_EMAIL }}
 
             # Setup gcloud CLI
