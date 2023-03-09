@@ -42,5 +42,5 @@ jobs:
             # upload file
            - name: gcloud Upload file
              run: |
-                  gsutil cors set new-project/index.html gs://desu-project/index.html
+                  gsutil cp new-project/index.html gs://desu-project/index.html
           
