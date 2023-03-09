@@ -44,7 +44,7 @@ jobs:
              uses: 'google-github-actions/upload-cloud-storage@v1'
              with:
                path: 'desu.txt'
-               destination: 'gs://desu-project/desu.txt'
+               destination: 'gs://desu-project/'
                    
             # upload file
 #            - name: gcloud Upload file
