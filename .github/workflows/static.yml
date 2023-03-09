@@ -34,4 +34,4 @@ jobs:
       - name: Upload file to GCS
         run: |
           #gsutil cp desu.txt gs://desu-project/uploadfiles/
-          gsutil cp -r new-project gs://desu-project/uploadfiles/
+          gsutil -m cp -r gs://desu-project/uploadfiles/
