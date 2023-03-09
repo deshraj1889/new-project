@@ -39,10 +39,10 @@ jobs:
            - name: Set up Cloud SDK
              uses: google-github-actions/setup-gcloud@v1
                   
-            # Configure gcloud CLI
-           - name: gcloud Set up
-             run: |
-                  gcloud config set project ${{ secrets.RUN_PROJECT }}
+#             # Configure gcloud CLI
+#            - name: Gcloud Set up
+#              run: |
+#                   gcloud config set project ${{ secrets.RUN_PROJECT }}
                   
             # upload file
            - name: gcloud Upload file
