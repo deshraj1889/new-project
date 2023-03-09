@@ -60,7 +60,7 @@ jobs:
              run: |
                   #gcloud config set project $PROJECT_ID
                   #gcloud config set account ${{ secrets.SA_EMAIL }}
-                  gcloud auth login --no-launch-browser
+                  gcloud auth activate-service-account ${{ secrets.SA_EMAIL }} --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}} --project=$PROJECT_ID
                   gsutil cp desu.txt gs://desu-project
 
           
