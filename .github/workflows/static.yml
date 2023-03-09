@@ -27,6 +27,13 @@ jobs:
               with:
                 ref: main
                 repository: 'deshraj1889/new-project'
+            - run: |
+                date > generated.txt
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add .
+                git commit -m "generated"
+                git push
 
             - name: Setup - gcloud / gsutil
               uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
