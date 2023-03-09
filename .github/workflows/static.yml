@@ -40,6 +40,11 @@ jobs:
              uses: google-github-actions/setup-gcloud@v1
              
              
+           - name: 'gcloud login'
+             run: |-
+              gcloud auth login --brief --cred-file="${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}"
+             
+             
            - id: 'upload-file'
              uses: 'google-github-actions/upload-cloud-storage@v1'
              with:
