@@ -34,6 +34,7 @@ jobs:
              with:
                 workload_identity_provider: ${{ secrets.TOKEN }}
                 service_account: ${{ secrets.SA_EMAIL }}
+                service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
                 
            # Setup gcloud CLI
            - name: Set up Cloud SDK
@@ -47,7 +48,12 @@ jobs:
 #                destination: 'desu-project/'
 #              env:
 #                CI: false
-                   
+
+            # Configure gcloud CLI
+           - name: gcloud Set up
+             run: |
+                  gcloud config set project $PROJECT_ID
+                  
             # upload file
            - name: gcloud Upload file
              run: |
