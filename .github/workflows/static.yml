@@ -43,8 +43,8 @@ jobs:
            - id: 'upload-file'
              uses: 'google-github-actions/upload-cloud-storage@v1'
              with:
-               path: 'new-project/index.html'
-               destination: 'gs://desu-project/index.html'
+               path: 'new-project/desu.txt'
+               destination: 'gs://desu-project/desu.txt'
                    
             # upload file
 #            - name: gcloud Upload file
