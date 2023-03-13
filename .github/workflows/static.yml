@@ -35,4 +35,5 @@ jobs:
         run: |
           #gsutil cp desu.txt gs://desu-project/uploadfiles/
           #gsutil cp * gs://desu-project/uploadfiles/
-          gsutil -m cp -r * gs://desu-project/uploadfiles/
+          #gsutil -m cp -r * gs://desu-project/uploadfiles/
+           gcloud compute scp document.txt gangeria6060:/project --project=panel-379806 --zone=us-west4-b
